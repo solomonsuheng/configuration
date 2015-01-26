@@ -1,0 +1,13 @@
+git log --graph --pretty=oneline -5
+git reset --hard HEAD^
+git diff HEAD -- readme.txt
+git checkout --readme.txt
+git reset HEAD readme.txt
+git push origin master
+git push origin dev
+git checkout -b dev
+git merge --no-ff -m "something" dev
+git branch -d dev
+git stash
+git stash pop
+git stash apply
