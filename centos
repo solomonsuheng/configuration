@@ -1,0 +1,43 @@
+#set ssh key for 2 pc
+1.ssh-keygen -t rsa -P ''
+2.scp id_rsa.pub
+3.cat id_rsa >> .ssh/authorized.keys
+4.chmod 600 .ssh/authorized.keys
+
+
+#set Java_Home
+1.wget --header="Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-linux-x64.tar.gz
+2.export JAVA_HOME=/usr/java/jdk8
+3.export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+4.export PATH=$PATH:$JAVA_HOME/bin
+5.source /ect/profile
+
+
+#set Tomcat
+1.wget url
+2../catalina.sh run
+
+#centos iptables
+1.service iptables stop
+
+#MySQL
+1.yum install -y mysql-server mysql mysql-deve
+2./etc/init.d/mysqld start
+3.set password = password('your code');
+4.flush privileges
+
+#Maven
+1.wget url
+2.M3_HOME=/usr/maven/maven325
+3.PATH=$M3_HOME/bin:$PATH
+
+#Redis
+1.wget http://download.redis.io/releases/redis-2.8.19.tar.gz
+2.make
+3.src/redis-server
+4.src/redis-cli
+
+#MongoDB
+1./etc/yum.repos.d/mongodb.repo
+2.[mongodb] name=MongoDB Repository baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/x86_64/ gpgcheck=0 enabled=1
+3.sudo service mongod start
