@@ -5,6 +5,7 @@ set nu
 set shiftwidth=2
 set tabstop=2
 set autoindent
+set cursorline
 
 "https://github.com/tpope/vim-pathogen
 call pathogen#infect()
