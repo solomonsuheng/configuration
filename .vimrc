@@ -13,3 +13,11 @@ call pathogen#infect()
 
 "Python
 map <F2> :!python % <CR>
+
+"Set java complier
+map <F5> :call CompileRunJavac()<CR>
+func! CompileRunJavac()
+   exec "w"
+   exec "!javac %"
+   exec "!java %<"
+endfunc 
