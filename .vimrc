@@ -18,7 +18,7 @@ map <F7> :call CompileRunScalac()<CR>
 func! CompileRunScalac()
 	exec "w"
 	exec "!scalac -d classFile %"
-	exec "!scala -cp classFile %"
+	exec "!scala -cp classFile %<"
 endfunc
 
 "NERDTree
